@@ -78,7 +78,7 @@ export default function getContext() {
 > By customizing class `_document` and function `renderPage`,render the `button` on server side 
 
 ```javascript
-//pages/_document.js
+// pages/_document.js
 import Document, { Head, Main, NextScript } from "next/document";
 import React from "react";
 import JssProvider from "react-jss/lib/JSSProvider";
@@ -90,71 +90,29 @@ class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width,initial-scale=1.0"
-          />
-          <meta name="google" content="notranslate" />
-          <meta name="theme-color" content="#1976D2" />
-          <link
-            rel="shortcut icon"
-            href="https://storage.googleapis.com/builderbook/favicon32.png"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Muli:300,400:latin"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapiscom/icon?family=material+Icons"
-          />
-          <link
-            rel="stylesheet"
-            href="https://storage.googleapis.com/builderbook/nprogress.min.css"
-          />
-          <link
-            rel="stylesheet"
-            href="https://storage.googleapis.com/builderbook/vs.min.css"
-          />
+          ...
+          ...
           <style>
             {`
-                            a,a:focus{
-                                font-weight:400
-                                color:#1565c0;
-                                text-decoration:none
-                                outline:none
-                            }
-                            a:hover,button:hover{
-                                opacity:0.75
-                                cursor:ponter
-                            }
-                            blockquote{
-                                padding:0 1em
-                                color:#555；
-                                border-left:0.25em solid #dfe2e5;
-                            }
-                            pre{
-                                display:block
-                                overflow-x:auto
-                                padding:0.5em
-                                background:#FFF
-                                border:1px solid #ddd
-                            }
-                            code{
-                                font-size:14px
-                                background:#FFF
-                                padding:3px 5px
-                            }
-                        `}
+                 a,a:focus{
+                     font-weight:400
+                     color:#1565c0;
+                     text-decoration:none
+                      outline:none
+                  }
+                  ...
+                  code{
+                      font-size:14px
+                      background:#FFF
+                      padding:3px 5px
+                  }
+              `}
           </style>
         </Head>
         <body
           style={{
             font: "16px Muli",
-            color: "#222",
-            margin: "0px auto",
-            fontWeight: "300",
-            lineHeight: "1.5em",
+            ...
             bakcgroundColor: "#F7F9FC"
           }}
         >
@@ -194,7 +152,7 @@ export default MyDocument;
 > After inject styles on server,and after the component is mounted on the browser ,remove the server-side styles
 
 ```javascript
-//lib/withLayout.js
+// lib/withLayout.js
 import React from "react";
 import PropTypes from 'prop-types'
 import {MuiThemeProvider} from '@material-ui/core/styles';
